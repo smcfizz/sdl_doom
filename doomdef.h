@@ -1,4 +1,4 @@
-// Emacs style mode select   -*- C++ -*- 
+// Emacs style mode select   -*- C++ -*-
 //-----------------------------------------------------------------------------
 //
 // $Id:$
@@ -43,7 +43,7 @@ typedef enum
   // DOOM 2 german edition not handled
   retail,	// DOOM 1 retail, E4, M36
   indetermined	// Well, no IWAD found.
-  
+
 } GameMode_t;
 
 
@@ -80,7 +80,7 @@ typedef enum
 // The integrated sound support is experimental,
 //  and unfinished. Default is synchronous.
 // Experimental asynchronous timer based is
-//  handled by SNDINTR. 
+//  handled by SNDINTR.
 #define SNDSERV  1
 //#define SNDINTR  1
 
@@ -107,12 +107,18 @@ typedef enum
 // Defines suck. C sucks.
 // C++ might sucks for OOP, but it sure is a better C.
 // So there.
+
 #define MAX_SCREEN_BLOCKS 11
+// #define MAX_SCREEN_BLOCKS 21  // Add to increase screen res
 #define MAX_SCREEN_SIZE (MAX_SCREEN_BLOCKS - 3)
 
-#define SCREENWIDTH  320
+// #define SCREENWIDTH  320
+#define SCREENWIDTH 640
+// #define SCREENWIDTH 1280
 //SCREEN_MUL*BASE_WIDTH //320
-#define SCREENHEIGHT 200
+// #define SCREENHEIGHT 200
+#define SCREENHEIGHT 400
+// #define SCREENHEIGHT 800
 //(int)(SCREEN_MUL*BASE_WIDTH*INV_ASPECT_RATIO) //200
 
 
@@ -126,7 +132,7 @@ typedef enum
 
 // The current state of the game: whether we are
 // playing, gazing at the intermission screen,
-// the game final animation, or a demo. 
+// the game final animation, or a demo.
 typedef enum
 {
     GS_LEVEL,
@@ -170,9 +176,9 @@ typedef enum
     it_blueskull,
     it_yellowskull,
     it_redskull,
-    
+
     NUMCARDS
-    
+
 } card_t;
 
 
@@ -193,7 +199,7 @@ typedef enum
     wp_supershotgun,
 
     NUMWEAPONS,
-    
+
     // No pending weapon change.
     wp_nochange
 
@@ -208,7 +214,7 @@ typedef enum
     am_cell,	// Plasma rifle, BFG.
     am_misl,	// Missile launcher.
     NUMAMMO,
-    am_noammo	// Unlimited for chainsaw / fist.	
+    am_noammo	// Unlimited for chainsaw / fist.
 
 } ammotype_t;
 
@@ -223,7 +229,7 @@ typedef enum
     pw_allmap,
     pw_infrared,
     NUMPOWERS
-    
+
 } powertype_t;
 
 
@@ -239,7 +245,7 @@ typedef enum
     INVISTICS	= (60*TICRATE),
     INFRATICS	= (120*TICRATE),
     IRONTICS	= (60*TICRATE)
-    
+
 } powerduration_t;
 
 
