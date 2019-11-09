@@ -1,4 +1,4 @@
-// Emacs style mode select   -*- C++ -*-
+// Emacs style mode select   -*- C++ -*- 
 //-----------------------------------------------------------------------------
 //
 // $Id:$
@@ -44,7 +44,7 @@ rcsid[] = "$Id: st_lib.c,v 1.4 1997/02/03 16:47:56 b1 Exp $";
 
 
 // in AM_map.c
-extern boolean		automapactive;
+extern boolean		automapactive; 
 
 
 
@@ -82,7 +82,7 @@ STlib_initNum
 }
 
 
-//
+// 
 // A fairly efficient way to draw a number
 //  based on differences from the old number.
 // Note: worth the trouble?
@@ -95,11 +95,11 @@ STlib_drawNum
 
     int		numdigits = n->width;
     int		num = *n->num;
-
+    
     int		w = SHORT(n->p[0]->width);
     int		h = SHORT(n->p[0]->height);
     int		x = n->x;
-
+    
     int		neg;
 
     n->oldnum = *n->num;
@@ -112,7 +112,7 @@ STlib_drawNum
 	    num = -9;
 	else if (numdigits == 3 && num < -99)
 	    num = -99;
-
+	
 	num = -num;
     }
 
@@ -120,9 +120,7 @@ STlib_drawNum
     x = n->x - numdigits*w;
 
     if (n->y - ST_Y < 0)
-	// I_Error("drawNum: n->y - ST_Y < 0");
-  // Add to increase screen res (?)
-  I_Error("drawNum: n->y - ST_Y < 0: n->y=%d: ST_Y=%d", n->y, ST_Y);
+	I_Error("drawNum: n->y - ST_Y < 0");
 
     V_CopyRect(x, n->y - ST_Y, BG, w*numdigits, h, x, n->y, FG);
 
@@ -185,7 +183,7 @@ STlib_updatePercent
 {
     if (refresh && *per->n.on)
 	V_DrawPatch(per->n.x, per->n.y, FG, per->p);
-
+    
     STlib_updateNum(&per->n, refresh);
 }
 
@@ -281,9 +279,7 @@ STlib_updateBinIcon
 	h = SHORT(bi->p->height);
 
 	if (y - ST_Y < 0)
-	    // I_Error("updateBinIcon: y - ST_Y < 0");
-      // Add to increase screen res (?)
-      I_Error("updateBinIcon: y - ST_Y < 0: y=%d: ST_Y=%d", y, ST_Y);
+	    I_Error("updateBinIcon: y - ST_Y < 0");
 
 	if (*bi->val)
 	    V_DrawPatch(bi->x, bi->y, FG, bi->p);
@@ -294,3 +290,4 @@ STlib_updateBinIcon
     }
 
 }
+
